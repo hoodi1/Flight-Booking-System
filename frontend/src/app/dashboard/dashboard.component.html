@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<body>    
+<div class="container">
+        <form [formGroup]="searchForm" class="search-form">
+            <div class="card">
+                <h5 class="card-header text-center">Search</h5>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="source" class="form-label">Source</label>
+                        <input type="text" class="form-control" id="source" placeholder="Enter Source" formControlName="source">
+                        <span class="text-danger" *ngIf="searchForm.controls['source'].dirty && searchForm.hasError('required','source')">*Source is required</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="destination" class="form-label">Destination</label>
+                        <input type="destination" class="form-control" id="destination" placeholder=" Enter Destination" formControlName="destination">
+                        <span class="text-danger" *ngIf="searchForm.controls['destination'].dirty && searchForm.hasError('required','destination')">*Destination is required</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date" placeholder=" Enter Date" formControlName="date">
+                        <span class="text-danger" *ngIf="searchForm.controls['date'].dirty && searchForm.hasError('required','date')">*Date is required</span>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary" [disabled]="!searchForm.valid" (click)="search()">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  
+    <div class="table-container" *ngIf="searchClicked">
+        <table class="table table-bordered table-stripped" *ngIf="allFlights?.length">
+            <thead>
+                <tr>
+                    <th scope="col">Flight Number</th>
+                    <th scope="col">Flight Name</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Seats Available</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of allFlights">
+                    <td>{{flight.fno}}</td>
+                    <td>{{flight.fname}}</td>
+                    <td>{{flight.source_destination}}</td>
+                    <td>{{flight.final_destination}}</td>
+                    <td>{{flight.date_travel}}</td>
+                    <td>{{flight.total_seats}}</td>
+                    <td><button type="button" class="btn btn-success" (click)="BookFlight(flight)" >Book Flight</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 *ngIf="!allFlights?.length"> No Flights available for your search query. Please try a different one.</h3>
+    </div>
+  
+</body>

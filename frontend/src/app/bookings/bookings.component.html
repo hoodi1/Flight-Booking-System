@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="body">
+<h1>Your Flight Bookings </h1>
+<div class="table-container table-bordered table-stripped">
+    <table class="table table-bordered table-stripped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Flight Number</th>
+                <th scope="col">Flight Name</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Date</th>
+                <th scope="col">Passenger Name</th>
+                <th scope="col">Passenger Email</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="!noBookings">
+            <tr *ngFor="let booking of bookings">
+                <td>{{booking.fno}}</td>
+                <td>{{booking.fname}}</td>
+                <td>{{booking.source_destination}}</td>
+                <td>{{booking.final_destination}}</td>
+                <td>{{booking.date_travel}}</td>
+                <td>{{userDetails.username}}</td>
+                <td>{{userDetails.email}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="cancelBooking(booking)" >Cancel Booking</button></td>
+            </tr>
+        </tbody>
+            <div style="text-align: center;" *ngIf="noBookings">
+                <h2>{{noBookMsg}} </h2>
+            </div>
+
+    </table>
+</div>
+</div>

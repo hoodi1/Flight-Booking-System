@@ -1,0 +1,57 @@
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(rgba(158, 14, 219, 0.8), rgba(230, 204, 253, 0.8));
+    background-image: url(https://images.unsplash.com/photo-1551633166-23c7aed83e48?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    flex-direction: column;
+}
+h3{
+    color: aquamarine;
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem; /* Add margin to move the container down */
+}
+
+.search-form .card {
+    background-color: rgba(173, 216, 230, 0.7); /* Light blue */
+    color: white;
+    border-radius: 10px;
+    width: 30rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header, .card-footer {
+    background-color: rgba(30, 30, 30, 0.7); /* Light blue */
+}
+
+.card-body {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Add margin to separate the table from the form */
+}
+
+.table {
+    --bs-table-color: #000000;
+    --bs-table-bg: rgb(255, 171, 2);
+    --bs-table-border-color: black;
+}
+.form-label{
+    color: black;
+}

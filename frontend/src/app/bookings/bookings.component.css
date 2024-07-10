@@ -1,0 +1,39 @@
+.body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(158, 14, 219, 0.8), rgba(230, 204, 253, 0.8));
+    flex-direction: column;
+    background-image: url("https://images.unsplash.com/photo-1551633166-23c7aed83e48?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    align-content: flex-start;
+}
+h1{
+    color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-stretch: expanded;
+}
+h2{
+    color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-stretch: expanded;
+}
+
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Add margin to separate the table from the form */
+}
+.table {
+    --bs-table-color: #000000;
+    --bs-table-bg: rgb(1, 35, 255);
+    --bs-table-border-color: rgb(254, 254, 254);
+    color: aliceblue;
+}

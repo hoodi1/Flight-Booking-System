@@ -1,0 +1,26 @@
+<div class="body"> 
+    <h1>Welcome to Flight Booking System</h1> 
+  <div class="container">
+        <form [formGroup]="loginForm" class="login-form">
+            <div class="card">
+                <h5 class="card-header text-center">Login</h5>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your user name" formControlName="username">
+                        <span class="text-danger" *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">*Username is required</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder=" Enter password" formControlName="password">
+                        <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*password is required</span>
+                    </div>
+                    <a href="/register"> Sign Up</a>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary" [disabled]="!loginForm.valid" (click)="login()">Log in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
